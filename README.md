@@ -1,4 +1,4 @@
-# CarePrompt — A Learning Clone of promptcare.com
+# CarePrompt — A Learning Clone of
 
 A simple, beginner-friendly frontend project that recreates the look and feel
 of [promptcare.com](https://www.promptcare.com) using **only the three
