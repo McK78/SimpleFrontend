@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<!--
+  This is a learning clone inspired by promptcare.com.
+  Every section below is labeled to match the README so you can compare
+  it against the original site as you read through the code.
+-->
+<html lang="en">
+<head>
+  <!-- charset: tells the browser how to decode characters (always UTF-8) -->
+  <meta charset="UTF-8" />
+  <!-- viewport: makes the page responsive on phones / tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- title: shows in the browser tab and in Google search results -->
+  <title>BloomSphere — In-home Specialty Care (Learning Clone)</title>
+  <!-- meta description: search engines display this snippet -->
+  <meta name="description" content="A beginner-friendly frontend learning project that recreates the look and feel of promptcare.com using plain HTML, CSS, and JavaScript." />
+
+  <!-- External stylesheet. Keeping CSS in its own file is a basic best practice. -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       1) TOP UTILITY BAR
+       In the original: thin dark strip with "PAY YOUR BILL" and
+       "REFER A PATIENT" buttons.
+       ============================================================ -->
+  <div class="utility-bar">
+    <div class="container utility-bar__inner">
+      <span class="utility-bar__tagline">Elevating the standard of care</span>
+      <nav class="utility-bar__links" aria-label="Utility">
+        <a href="#pay">Pay Your Bill</a>
+        <a href="#refer" class="btn btn--small">Refer a Patient</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       2) MAIN HEADER / NAVIGATION
+       Logo on the left, menu in the middle, "hamburger" on mobile.
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="#" class="logo" aria-label="BloomSphere home">
+        <span class="logo__mark">C+</span>
+        <span class="logo__text">BloomSphere</span>
+      </a>
+
+      <!-- Mobile menu toggle button. Hidden on desktop via CSS. -->
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+        <span class="sr-only">Toggle menu</span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#patients">For Patients</a></li>
+          <li><a href="#providers">For Providers</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         3) HERO SECTION
+         Big headline + short intro + call-to-action button + image.
+         ============================================================ -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow">Elevating the Standard of Care</p>
+          <h1>Treating Complex Health Conditions</h1>
+          <p class="hero__lede">
+            BloomSphere is a learning-project clone of a leading provider of
+            in-home respiratory, infusion, and specialty pharmaceutical therapies.
+          </p>
+          <a href="#about" class="btn btn--primary">Explore BloomSphere</a>
+        </div>
+        <div class="hero__image">
+          <img
+            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=70"
+            alt="A nurse caring for a patient at home"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4) SERVICE CARDS
+         Two large image cards side by side, like the original.
+         ============================================================ -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2 class="section-title">Unique Journeys Deserve Personalized Care</h2>
+        <p class="section-subtitle">
+          For people with chronic and complex health conditions, a personalized
+          plan and network of support are more than just comfort.
+        </p>
+
+        <div class="card-grid">
+          <article class="card">
+            <img
+              class="card__image"
+              src="https://images.unsplash.com/photo-1581579188871-45ea61f2a0c8?auto=format&fit=crop&w=800&q=70"
+              alt="Grandmother hugged by grandchildren"
+            />
+            <div class="card__body">
+              <h3>Infusion Therapy &amp; Specialty Pharmacy</h3>
+              <p>
+                Expert specialty therapies, delivered with heartfelt dedication
+                from coast to coast.
+              </p>
+              <a href="#" class="link-arrow">Discover Infusion Services →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img
+              class="card__image"
+              src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=70"
+              alt="Mother playing with toddler outdoors"
+            />
+            <div class="card__body">
+              <h3>Respiratory Services</h3>
+              <p>
+                Life-enabling technology and hands-on support for complex
+                respiratory conditions.
+              </p>
+              <a href="#" class="link-arrow">Discover Respiratory Services →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5) ACCORDION SECTION
+         Click a row, panel expands. The original site uses this for
+         "Care That Comes To You / Whole Person Care / Experts At
+         Your Service".
+         ============================================================ -->
+    <section id="patients" class="accordion-section">
+      <div class="container accordion-section__inner">
+        <div class="accordion-section__intro">
+          <h2 class="section-title">Helping Patients Live Their Fullest Lives</h2>
+          <p>Pick a topic on the right to learn more.</p>
+        </div>
+
+        <div class="accordion">
+          <!-- Each .accordion__item has a button + a panel. -->
+          <div class="accordion__item is-open">
+            <button class="accordion__trigger" aria-expanded="true">
+              Care That Comes To You
+              <span class="accordion__icon" aria-hidden="true">−</span>
+            </button>
+            <div class="accordion__panel">
+              <ul>
+                <li>Nationwide availability</li>
+                <li>Tailored in-home respiratory and infusion care</li>
+                <li>Trusted equipment delivered to your doorstep</li>
+                <li>Prompt support, day or night</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              Whole Person Care
+              <span class="accordion__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion__panel">
+              <p>
+                We treat patients, not just conditions — coordinating with
+                family, doctors, and nurses to support the whole person.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              Experts At Your Service
+              <span class="accordion__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="accordion__panel">
+              <p>
+                A clinical team with decades of experience in specialty
+                therapies, available across the country.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6) TESTIMONIALS SLIDER
+         A simple slider built from buttons + a row of quote cards.
+         ============================================================ -->
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title section-title--light">What Patients Say</h2>
+
+        <div class="slider" data-slider>
+          <button class="slider__btn slider__btn--prev" aria-label="Previous">‹</button>
+
+          <div class="slider__track-wrapper">
+          <ul class="slider__track" data-slider-track>
+            <li class="slider__slide">
+              <blockquote>
+                <p>
+                  “Our respiratory therapist has been there every step of the
+                  way. To have somebody help us with such professionalism is
+                  what every new parent hopes for.”
+                </p>
+                <footer>— Alicia, mother of pediatric patient</footer>
+              </blockquote>
+            </li>
+            <li class="slider__slide">
+              <blockquote>
+                <p>
+                  “My infusion nurse makes everything so simple, and the whole
+                  team’s responsiveness keeps me on track.”
+                </p>
+                <footer>— Don, infusion patient</footer>
+              </blockquote>
+            </li>
+            <li class="slider__slide">
+              <blockquote>
+                <p>
+                  “With BloomSphere, our son’s quality of life is vastly improved,
+                  and we feel so supported throughout his journey.”
+                </p>
+                <footer>— Lorna, parent of pediatric patient</footer>
+              </blockquote>
+            </li>
+          </ul>
+          </div>
+
+          <button class="slider__btn slider__btn--next" aria-label="Next">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7) ABOUT / LEGACY SECTION
+         Two-column block with image and call-to-action.
+         ============================================================ -->
+    <section id="about" class="about">
+      <div class="container about__inner">
+        <img
+          class="about__image"
+          src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=70"
+          alt="Doctor and pharmacist talking"
+        />
+        <div class="about__content">
+          <p class="eyebrow">A Legacy of Compassion</p>
+          <h2>A Continual Force in a Complex Landscape</h2>
+          <p>
+            For nearly 40 years, our dedicated team has provided exceptional
+            care for patients nationwide.
+          </p>
+          <a href="#" class="btn btn--primary">Meet the Team</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         8) NEWSLETTER SIGNUP
+         Simple form. The submit is captured in script.js and shows
+         a thank-you message (no real backend in a learning project).
+         ============================================================ -->
+    <section class="newsletter">
+      <div class="container newsletter__inner">
+        <h2>Stay Up-To-Date With the Latest Healthcare Insights</h2>
+        <form class="newsletter__form" data-newsletter>
+          <label class="sr-only" for="email">Email address</label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            required
+            placeholder="Email Address*"
+          />
+          <button type="submit" class="btn btn--primary">Subscribe Now</button>
+        </form>
+        <p class="newsletter__status" data-newsletter-status role="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       9) FOOTER
+       Multi-column links + social icons + copyright.
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Patients</h4>
+        <ul>
+          <li><a href="#">Infusion &amp; Specialty Pharmacy</a></li>
+          <li><a href="#">Respiratory</a></li>
+          <li><a href="#">Enteral Nutrition</a></li>
+          <li><a href="#">Rare Conditions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Code of Conduct</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <ul class="social">
+          <li><a href="#" aria-label="LinkedIn">in</a></li>
+          <li><a href="#" aria-label="Facebook">f</a></li>
+          <li><a href="#" aria-label="YouTube">▶</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>© <span data-year></span> BloomSphere (learning clone). Not affiliated with PromptCare.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript at the end of <body> so the HTML loads first. -->
+  <script src="script.js"></script>
+</body>
+</html>
